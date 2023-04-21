@@ -1,0 +1,11 @@
+*{
+    font-family: 'Nunito Sans', 'sans-serif';
+}
+
+@media (min-width: 576px) {
+    .dropdown{
+        display: flex;
+        justify-content: end;
+    }
+  }
+  
