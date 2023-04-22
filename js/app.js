@@ -1,3 +1,18 @@
+import data from "./data.js";
+import dom from "./dom.js";
+
+const URL = 'https://restcountries.com/v3.1/all';
+
+const countries = dom.$('#countries');
+
+const countriesAPI = await data.getData(URL);
+
+countriesAPI.forEach(element => {
+    const tarjeta = dom.Card(element);
+
+    countries.appendChild(tarjeta);
+})
+
 const darkMode = () =>{
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
     document.querySelector("#shift").setAttribute("class", "bi bi-sun");
