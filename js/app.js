@@ -3,15 +3,48 @@ import dom from "./dom.js";
 
 const URL = 'https://restcountries.com/v3.1/all';
 
-const countries = dom.$('#countries');
 
 const countriesAPI = await data.getData(URL);
 
-countriesAPI.forEach(element => {
-    const tarjeta = dom.Card(element);
+const regions = data.getRegion(countriesAPI);
 
-    countries.appendChild(tarjeta);
+dom.insertRegions(regions);
+
+const listRegions = [...dom.$('#regions').children];
+let activo = 0;
+
+listRegions.forEach( (region, index) => {
+
+    region.addEventListener('click', () => {
+    if (region.classList.contains('active')) return;
+
+    region.classList.add('active');
+    
+    let ah = listRegions[activo];
+    ah.classList.remove('active');
+
+    activo = index;
+
+    let filtro = region.textContent;
+
+    const filtered = filtro == 'All' ? countriesAPI : data.filtrar(countriesAPI, filtro);
+    dom.muestracards(filtered);
+    })
 })
+
+const searchbycountry = dom.$('#search');
+
+searchbycountry.addEventListener('keyup', () => {
+    let filtro = searchbycountry.value;
+
+    const filtered = filtro == '' ? countriesAPI : data.filterByName(countriesAPI, filtro);
+
+    dom.muestracards(filtered);
+})
+
+dom.muestracards(countriesAPI);
+
+
 
 const darkMode = () =>{
     document.querySelector("body").setAttribute("data-bs-theme", "dark");

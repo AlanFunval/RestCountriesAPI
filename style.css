@@ -8,4 +8,8 @@
         justify-content: end;
     }
   }
+
+  .active {
+    border-color: var(--hospital-green);
+  }
   
