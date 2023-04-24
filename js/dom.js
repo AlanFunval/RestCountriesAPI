@@ -6,12 +6,11 @@ const newElement = tag => document.createElement(tag);
 
 const Card = (obj) => {
     const div = newElement('div');
-    div.className = 'card';
+    div.className = 'card col-12 col-sm-4 col-md-3';
 
     div.innerHTML = `
-    <div class="col">
     <div class="tarjeta">
-    <img src="${obj.flags.svg}" class="w-100" alt="imagen">
+    <img src="${obj.flags.png}" class="w-100" alt="imagen">
     </div>
     <div class="">
       <h5 class="fw-bold p-3">${obj.name.common}</h5>
@@ -19,7 +18,6 @@ const Card = (obj) => {
         <p><span class="fw-bold">Population: </span>${obj.population}</p>
         <p><span class="fw-bold">Region: </span>${obj.region}</p>
         <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
-    </div>
     </div>
     </div>
     `
