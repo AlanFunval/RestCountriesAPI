@@ -32,9 +32,9 @@ listRegions.forEach( (region, index) => {
     })
 })
 
-const searchbycountry = dom.$('#search');
+const search = dom.$('#searchbycountry');
 
-searchbycountry.addEventListener('keyup', () => {
+search.addEventListener('keyup', () => {
     let filtro = searchbycountry.value;
 
     const filtered = filtro == '' ? countriesAPI : data.filterByName(countriesAPI, filtro);

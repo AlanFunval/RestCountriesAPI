@@ -9,17 +9,19 @@ const Card = (obj) => {
     div.className = 'card';
 
     div.innerHTML = `
+    <div class="col">
     <div class="tarjeta">
     <img src="${obj.flags.svg}" class="w-100" alt="imagen">
+    </div>
     <div class="">
       <h5 class="fw-bold p-3">${obj.name.common}</h5>
-    </div>
     <div class="ps-3">
         <p><span class="fw-bold">Population: </span>${obj.population}</p>
         <p><span class="fw-bold">Region: </span>${obj.region}</p>
         <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
     </div>
-  </div>
+    </div>
+    </div>
     `
     return div;
 }
