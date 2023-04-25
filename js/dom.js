@@ -10,7 +10,7 @@ const Card = (obj) => {
 
     div.innerHTML = `
     <div class="tarjeta">
-    <img src="${obj.flags.png}" class="w-100" alt="imagen">
+    <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
     </div>
     <div class="">
       <h5 class="fw-bold p-3">${obj.name.common}</h5>
@@ -47,9 +47,34 @@ const insertRegions = (regions) => {
 
 }
 
+const showCardDetails = (obj) => {
+  const div = newElement('div');
+  div.className = 'card col-12 col-sm-6 col-md-4 col-lg-3';
+
+  div.innerHTML = `
+    <div class="tarjeta">
+      <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
+    </div>
+    <div class="">
+      <h5 class="fw-bold p-3">${obj.name.common}</h5>
+      <div class="ps-3">
+        <p><span class="fw-bold">Population: </span>${obj.population}</p>
+        <p><span class="fw-bold">Region: </span>${obj.region}</p>
+        <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
+        <p><span class="fw-bold">Top Level Domain: </span>${obj.tld.join(', ')}</p>
+        <p><span class="fw-bold">Currencies: </span>${Object.values(obj.currencies).join(', ')}</p>
+        <p><span class="fw-bold">Languages: </span>${Object.values(obj.languages).join(', ')}</p>
+      </div>
+    </div>
+  `;
+
+  return div;
+};
+
 export default {
     Card,
     $,
     muestracards,
     insertRegions,
+    showCardDetails,
 }

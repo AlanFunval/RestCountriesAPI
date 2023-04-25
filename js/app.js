@@ -44,7 +44,14 @@ search.addEventListener('keyup', () => {
 
 dom.muestracards(countriesAPI);
 
-
+const cards = [...countries.children];
+cards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const cardDetails = dom.showCardDetails(countriesAPI.find((obj) => obj.name.common === card.querySelector('h5').textContent));
+    countries.innerHTML = '';
+    countries.appendChild(cardDetails);
+  });
+});
 
 const darkMode = () =>{
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
