@@ -61,9 +61,9 @@ const showCardDetails = (obj) => {
         <p><span class="fw-bold">Population: </span>${obj.population}</p>
         <p><span class="fw-bold">Region: </span>${obj.region}</p>
         <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
-        <p><span class="fw-bold">Top Level Domain: </span>${obj.tld.join(', ')}</p>
-        <p><span class="fw-bold">Currencies: </span>${Object.values(obj.currencies).join(', ')}</p>
-        <p><span class="fw-bold">Languages: </span>${Object.values(obj.languages).join(', ')}</p>
+        <p><span class="fw-bold">Top Level Domain: </span>${obj.tld}</p>
+        <p><span class="fw-bold">Currencies: </span>${obj.currencies.name}</p>
+        <p><span class="fw-bold">Languages: </span>${obj.languages}</p>
       </div>
     </div>
   `;
