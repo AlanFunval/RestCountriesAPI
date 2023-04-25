@@ -27,12 +27,11 @@
   <section class="container p-3">
     <div class="row">
     <div class="input-group col-xs-12 col-sm justify-content-center mb-3">
-      <span class="input-group-text">
-        <i class="fa-solid fa-magnifying-glass m-2"></i>
-      </span>
+      <button class="input-group-text">
+        <i class="bi bi-search"></i>
+      </button>
       <input id="searchbycountry" type="text" class="search form-control fw-medium" placeholder="Search for a country..." aria-label="Search" aria-describedby="basic-addon1">
     </div>
-
     <div class="p-3 dropdown col-xs-12 col-sm">
       <button class="btn btn-light dropdown-toggle fw-normal" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Filter by Region
@@ -41,6 +40,11 @@
       </ul>
     </div>
     </div>
+    <section>
+      <div>
+        <button class="btn btn-transparent border" id="back-btn"><i class="bi bi-arrow-left"></i>Back</button>
+      </div>
+    </section>
     </section>
 
     <section class="row gap-5 justify-content-center" id="countries">

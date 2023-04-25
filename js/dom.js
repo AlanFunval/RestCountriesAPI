@@ -48,24 +48,31 @@ const insertRegions = (regions) => {
 }
 
 const showCardDetails = (obj) => {
+  let [moneda] = Object.keys(obj.currencies);
+  let [lengua] = Object.keys(obj.languages);
   const div = newElement('div');
-  div.className = 'card col-12 col-sm-6 col-md-4 col-lg-3';
+  div.className = 'vista w-75';
 
   div.innerHTML = `
-    <div class="tarjeta">
-      <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
+    <div class="tarjeta1">
+      <img src="${obj.flags.png}" class="w-50" alt="${obj.alt}">
     </div>
     <div class="">
       <h5 class="fw-bold p-3">${obj.name.common}</h5>
+      </div>
       <div class="ps-3">
         <p><span class="fw-bold">Population: </span>${obj.population}</p>
         <p><span class="fw-bold">Region: </span>${obj.region}</p>
         <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
         <p><span class="fw-bold">Top Level Domain: </span>${obj.tld}</p>
-        <p><span class="fw-bold">Currencies: </span>${obj.currencies.name}</p>
-        <p><span class="fw-bold">Languages: </span>${obj.languages}</p>
+        <p><span class="fw-bold">Currencies: </span>${obj.currencies[moneda].name}</p>
+        <p><span class="fw-bold">Languages: </span>${obj.languages[lengua]}</p>
       </div>
-    </div>
+      <div>
+      <p>Border Countries: 
+      <button type="button" class="btn btn-transparent border">${obj.borders}</button></p>
+      </div>
+
   `;
 
   return div;

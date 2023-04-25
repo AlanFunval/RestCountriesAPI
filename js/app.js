@@ -44,6 +44,7 @@ search.addEventListener('keyup', () => {
 
 dom.muestracards(countriesAPI);
 
+//card de la otra vista
 const cards = [...countries.children];
 cards.forEach((card) => {
   card.addEventListener('click', () => {
@@ -52,6 +53,7 @@ cards.forEach((card) => {
     countries.appendChild(cardDetails);
   });
 });
+//card de la otra vista
 
 const darkMode = () =>{
     document.querySelector("body").setAttribute("data-bs-theme", "dark");
@@ -70,3 +72,11 @@ const cambiarModo = () =>{
 
 const buttonshift = document.querySelector('#light-dark-mode');
 buttonshift.addEventListener('click', cambiarModo);
+
+
+
+
+const backBtn = document.querySelector('#back-btn');
+backBtn.addEventListener('click', () => {
+    window.location.reload();
+});
