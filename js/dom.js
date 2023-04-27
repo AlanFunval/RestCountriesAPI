@@ -9,7 +9,7 @@ const Card = (obj) => {
     div.className = 'card col-12 col-sm-4 col-md-3';
 
     div.innerHTML = `
-    <div class="img">
+    <div class="img d-flex justify-content-center">
     <img src="${obj.flags.png}" class="img-fluid" alt="${obj.alt}">
     </div>
     <div class="text">
@@ -34,31 +34,36 @@ const Card = (obj) => {
     </div>
     <button id="light-dark-mode" class="btn rounded-fill fw-semibold"><i id="shift" class="bi bi-moon"></i>Dark Mode</button>
   </nav>
-      <div class="p-3">
-      <button type="button" class="buttomoffcanvas btn btn-transparent border" data-bs-toggle="offcanvas" data-bs-dismiss="offcanvas"><i class="bi bi-arrow-left"></i>Back</button>
-      <div class="d-flex justify-content-center m-5">
-      <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
-      </div>
-    <div class="p-3">
-      <h5 class="fw-bold">${obj.name.common}</h5>
-      </div>
-      <div class="p-3">
-        <p><span class="fw-bold">Population: </span>${obj.population}</p>
-        <p><span class="fw-bold">Region: </span>${obj.region}</p>
-        <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
-        <div class="pt-3">
-        <p><span class="fw-bold">Top Level Domain: </span>${obj.tld}</p>
-        <p><span class="fw-bold">Currencies: </span>${obj.currencies[moneda].name}</p>
-        <p><span class="fw-bold">Languages: </span>${obj.languages[lengua]}</p>
-        </div>
-        <p><span class="fw-bold">Border Countries: </span><button type="button" class="btn btn-transparent border">${obj.borders}</button></p>
-      </div>
+
+  <div class="main-container p-3">
+  <button type="button" class="buttomoffcanvas btn btn-transparent border" data-bs-toggle="offcanvas" data-bs-dismiss="offcanvas"><i class="bi bi-arrow-left"></i>Back</button>
+  <div class="offcanvas-container pt-3">
+  <div class="img-offcanvas">
+  <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
+  </div>
+  <div class="container-text pt-3">
+  <h5 class="fw-bold">${obj.name.common}</h5>
+  <div class="pt-3">
+    <p><span class="fw-bold">Population: </span>${obj.population}</p>
+    <p><span class="fw-bold">Region: </span>${obj.region}</p>
+    <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
+  </div>
+  </div>
+    <div class="pt-3">
+    <p><span class="fw-bold">Top Level Domain: </span>${obj.tld}</p>
+    <p><span class="fw-bold">Currencies: </span>${obj.currencies[moneda].name}</p>
+    <p><span class="fw-bold">Languages: </span>${obj.languages[lengua]}</p>
+    <div class="">
+    <p class="bordercontries pt-3"><span class="fw-bold">Border Countries: </span><button type="button" class="btn btn-transparent border">${obj.borders}</button></p>
     </div>
+    </div>
+  </div>
+  </div>
       `;
 
       document.body.appendChild(offcanvas);
-      const offcanvasInstance = new bootstrap.Offcanvas(offcanvas);
-      offcanvasInstance.show();
+      const offcanvasfunction = new bootstrap.Offcanvas(offcanvas);
+      offcanvasfunction.show();
     });
 
     return div;

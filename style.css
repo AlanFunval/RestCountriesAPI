@@ -7,7 +7,16 @@
         display: flex;
         justify-content: end;
     }
+    .img-offcanvas{
+      width: 400px;
+    }
+    .offcanvas-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
+
   .buttomoffcanvas{
     width: 150px;
   }
@@ -15,4 +24,28 @@
   .offcanvas {
     overflow-y: auto;
   }
-  
+
+  @media (min-width: 753px) {
+    .offcanvas-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .img-offcanvas{
+      width: 500px;
+    }
+  }
+
+
+
+  @media (min-width: 992px) {
+    .offcanvas-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+    .img-offcanvas{
+      width: 600px;
+    }
+    .container-text{
+      text-align: center;
+    }
+  }

@@ -22,7 +22,7 @@ const filtrar = (arr, filtro) => {
 } 
 
 const filterByName = (arr, filtro) => {
-    let filtered = arr.filter(elem => elem.name.common.includes(filtro))
+    let filtered = arr.filter(elem => elem.name.common.toLowerCase().includes(filtro.toLowerCase()))
 
     return filtered
 }
