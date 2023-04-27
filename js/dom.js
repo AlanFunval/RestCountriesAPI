@@ -78,15 +78,6 @@ const showCardDetails = (obj) => {
   return div;
 };
 
-const cards = [...countries.children];
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    const cardDetails = dom.showCardDetails(countriesAPI.find((obj) => obj.name.common === card.querySelector('h5').textContent));
-    countries.innerHTML = '';
-    countries.appendChild(cardDetails);
-  });
-});
-
 export default {
     Card,
     $,
