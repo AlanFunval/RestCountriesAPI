@@ -10,7 +10,7 @@ const Card = (obj) => {
 
     div.innerHTML = `
     <div class="tarjeta">
-    <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
+    <img src="${obj.flags.png}" class="img-fluid" alt="${obj.alt}">
     </div>
     <div class="">
       <h5 class="fw-bold p-3">${obj.name.common}</h5>

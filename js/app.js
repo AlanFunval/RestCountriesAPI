@@ -63,18 +63,3 @@ const cambiarModo = () =>{
 
 const buttonshift = document.querySelector('#light-dark-mode');
 buttonshift.addEventListener('click', cambiarModo);
-
-const cards = [...countries.children];
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    const cardDetails = dom.showCardDetails(countriesAPI.find((obj) => obj.name.common === card.querySelector('h5').textContent));
-    countries.innerHTML = '';
-    countries.appendChild(cardDetails);
-  });
-});
-
-
-const backBtn = document.querySelector('#back-btn');
-backBtn.addEventListener('click', () => {
-    window.location.reload();
-});
