@@ -26,24 +26,32 @@ const Card = (obj) => {
       let [moneda] = Object.keys(obj.currencies);
       let [lengua] = Object.keys(obj.languages);
       const offcanvas = newElement('div');
-      offcanvas.className = 'card offcanvas offcanvas-top h-100';
+      offcanvas.className = 'offcanvas offcanvas-bottom h-100';
       offcanvas.innerHTML = `
-      <button type="button" class="btn btn-transparent border" data-bs-toggle="offcanvas" data-bs-dismiss="offcanvas"><i class="bi bi-arrow-left"></i>Back</button>
-      <div class="">
-      <div class="">
-      <img src="${obj.flags.png}" class="w-25" alt="${obj.alt}">
+      <nav class="d-flex justify-content-between p-3 border pb-3">
+    <div class="pt-3 title fw-bold">
+      <p>Where in the world?</p>
+    </div>
+    <button id="light-dark-mode" class="btn rounded-fill fw-semibold"><i id="shift" class="bi bi-moon"></i>Dark Mode</button>
+  </nav>
+      <div class="p-3">
+      <button type="button" class="buttomoffcanvas btn btn-transparent border" data-bs-toggle="offcanvas" data-bs-dismiss="offcanvas"><i class="bi bi-arrow-left"></i>Back</button>
+      <div class="d-flex justify-content-center m-5">
+      <img src="${obj.flags.png}" class="w-100" alt="${obj.alt}">
       </div>
-    <div class="">
-      <h5 class="">${obj.name.common}</h5>
+    <div class="p-3">
+      <h5 class="fw-bold">${obj.name.common}</h5>
       </div>
-      <div class="">
+      <div class="p-3">
         <p><span class="fw-bold">Population: </span>${obj.population}</p>
         <p><span class="fw-bold">Region: </span>${obj.region}</p>
         <p><span class="fw-bold">Capital: </span>${obj.capital}</p>
+        <div class="pt-3">
         <p><span class="fw-bold">Top Level Domain: </span>${obj.tld}</p>
         <p><span class="fw-bold">Currencies: </span>${obj.currencies[moneda].name}</p>
         <p><span class="fw-bold">Languages: </span>${obj.languages[lengua]}</p>
-        <p>Border Countries: <button type="button" class="btn btn-transparent border">${obj.borders}</button></p>
+        </div>
+        <p><span class="fw-bold">Border Countries: </span><button type="button" class="btn btn-transparent border">${obj.borders}</button></p>
       </div>
     </div>
       `;

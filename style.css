@@ -8,8 +8,11 @@
         justify-content: end;
     }
   }
+  .buttomoffcanvas{
+    width: 150px;
+  }
 
-  .active {
-    border-color: var(--hospital-green);
+  .offcanvas {
+    overflow-y: auto;
   }
   
